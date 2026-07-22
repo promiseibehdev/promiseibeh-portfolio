@@ -33,6 +33,9 @@ html {
   color: #4b5563; /* text-gray-600 */
   line-height: 1.8;
   font-size: 1rem;
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .blog-detail-content h4 {
   font-family: "Playfair Display", "Georgia", serif;
@@ -42,6 +45,9 @@ html {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   letter-spacing: -0.025em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .blog-detail-content pre {
   background-color: #f9fafb; /* bg-gray-50 */
@@ -54,5 +60,12 @@ html {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   overflow-x: auto;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.blog-detail-content code {
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 

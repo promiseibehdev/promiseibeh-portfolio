@@ -113,14 +113,14 @@ export default function Blog() {
               </button>
 
               {/* Main Container Card */}
-              <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-6 sm:p-12">
+              <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-4 sm:p-6 md:p-12 overflow-hidden">
                 {/* Title */}
-                <h1 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-gray-900 uppercase mb-6 leading-tight">
+                <h1 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-gray-900 uppercase mb-6 leading-tight break-words">
                   {selectedPost.title}
                 </h1>
 
                 {/* Featured Image */}
-                <div className="aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-gray-100 mb-8 bg-gray-50">
+                <div className="aspect-video sm:aspect-[21/9] rounded-2xl overflow-hidden border border-gray-100 mb-8 bg-gray-50 w-full">
                   <img
                     src={selectedPost.image}
                     alt={selectedPost.title}
@@ -138,7 +138,7 @@ export default function Blog() {
 
                 {/* Article Content */}
                 <div 
-                  className="blog-detail-content text-gray-600 font-light leading-relaxed text-justify space-y-6"
+                  className="blog-detail-content text-gray-600 font-light leading-relaxed text-left space-y-6 overflow-x-hidden"
                   dangerouslySetInnerHTML={{ __html: getCleanContent(selectedPost.content) }}
                 />
 
