@@ -250,10 +250,10 @@ export default function Portfolio() {
 
                     {/* CTA links: Live Demo + GitHub (dynamic) */}
                     <div className="w-full">
-                      {selectedProject.liveUrl ? (
+                      {project?.liveUrl ? (
                         <a
                           id="modal-cta-live"
-                          href={selectedProject.liveUrl}
+                          href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full bg-gray-900 hover:bg-brand hover:text-gray-900 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer text-center block"
@@ -273,10 +273,10 @@ export default function Portfolio() {
                       )}
 
                       <div className="mt-3">
-                        {selectedProject.githubUrl ? (
+                        {project?.githubUrl ? (
                           <a
                             id="modal-cta-github"
-                            href={selectedProject.githubUrl}
+                            href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full bg-gray-900 hover:bg-brand hover:text-gray-900 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer text-center block"
