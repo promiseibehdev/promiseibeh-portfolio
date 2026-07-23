@@ -8,6 +8,9 @@ export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'web' | 'automation' | 'branding'>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
+  // alias for clarity in modal markup
+  const project = selectedProject;
+
   const categories = [
     { id: 'all', label: 'All Works' },
     { id: 'web', label: 'Web Applications' },
