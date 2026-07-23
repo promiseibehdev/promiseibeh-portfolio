@@ -179,6 +179,8 @@ export const PROJECTS: Project[] = [
     client: 'Academic Databases',
     date: 'May 2025',
     url: 'https://github.com',
+    liveUrl: 'https://school-check-vpkelphmqnu6aaek4qz3xp.streamlit.app/',
+    githubUrl: 'https://github.com/promiseibehdev/school-check',
     technologies: ['Python', 'Web Scraping', 'Pandas', 'Data Verification', 'Automation Scripting'],
   },
   {
@@ -190,6 +192,8 @@ export const PROJECTS: Project[] = [
     client: 'Internal R&D',
     date: 'Feb 2025',
     url: 'https://github.com',
+    liveUrl: '',
+    githubUrl: 'https://github.com',
     technologies: ['Ollama', 'LM Studio', 'Local LLMs', 'System Administration', 'Workflow Integration'],
   },
   {
@@ -201,6 +205,8 @@ export const PROJECTS: Project[] = [
     client: 'ThinKaiMotivation Network',
     date: 'Ongoing (Started 2021)',
     url: 'https://tiktok.com',
+    liveUrl: 'https://tiktok.com',
+    githubUrl: '',
     technologies: ['Python Automation', 'Social Media API', 'Content Analytics', 'Video Processing', 'Platform Growth'],
   },
   {
@@ -212,6 +218,8 @@ export const PROJECTS: Project[] = [
     client: 'iTECH International Ltd',
     date: 'Dec 2024',
     url: 'https://wordpress.org',
+    liveUrl: '',
+    githubUrl: '',
     technologies: ['WordPress', 'WooCommerce', 'Nginx Configuration', 'Database Optimization', 'Payment Gateways'],
   },
   {
@@ -223,6 +231,8 @@ export const PROJECTS: Project[] = [
     client: 'PromiseAgricTech',
     date: 'March 2026',
     url: 'https://github.com/Promiseibeh5566?tab=projects',
+    liveUrl: '',
+    githubUrl: 'https://github.com/Promiseibeh5566?tab=projects',
     technologies: ['React', 'Firebase Firestore', 'State Management', 'Tailwind CSS', 'Admin Portal'],
   },
   {
@@ -234,6 +244,8 @@ export const PROJECTS: Project[] = [
     client: 'Mu-Matraymond Ventures Ltd',
     date: 'Oct 2024',
     url: 'https://aws.amazon.com',
+    liveUrl: 'https://aws.amazon.com',
+    githubUrl: '',
     technologies: ['AWS EC2', 'CloudWatch', 'Network Security', 'VPC', 'Cost Optimization'],
   },
   {
@@ -245,6 +257,8 @@ export const PROJECTS: Project[] = [
     client: 'iTECH International Ltd',
     date: 'May 2024',
     url: 'https://wordpress.org',
+    liveUrl: '',
+    githubUrl: '',
     technologies: ['WordPress', 'PHP', 'CSS3', 'Web Security', 'Database Tuning'],
   },
   {
@@ -256,6 +270,8 @@ export const PROJECTS: Project[] = [
     client: 'Personal Brand Showcase',
     date: 'July 2026',
     url: 'https://github.com/Promiseibeh5566',
+    liveUrl: '',
+    githubUrl: 'https://github.com/Promiseibeh5566',
     technologies: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'motion', 'Responsive Design'],
   }
 ];

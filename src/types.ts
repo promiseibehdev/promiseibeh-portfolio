@@ -7,6 +7,8 @@ export interface Project {
   client: string;
   date: string;
   url: string;
+  liveUrl?: string;
+  githubUrl?: string;
   technologies: string[];
 }
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Eye, X, Globe, Calendar, User, Layers } from 'lucide-react';
+import { Eye, X, Globe, Calendar, User, Layers, Github } from 'lucide-react';
 import { PROJECTS } from '../data';
 import { Project } from '../types';
 
@@ -245,17 +245,54 @@ export default function Portfolio() {
                       </div>
                     </div>
 
-                    {/* CTA link */}
-                    <a
-                      id="modal-cta-btn"
-                      href={selectedProject.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full bg-gray-900 hover:bg-brand hover:text-gray-900 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer text-center"
-                    >
-                      <Globe size={18} />
-                      <span>Launch Live Demo</span>
-                    </a>
+                    {/* CTA links: Live Demo + GitHub (dynamic) */}
+                    <div className="w-full">
+                      {selectedProject.liveUrl ? (
+                        <a
+                          id="modal-cta-live"
+                          href={selectedProject.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full bg-gray-900 hover:bg-brand hover:text-gray-900 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer text-center block"
+                        >
+                          <Globe size={18} />
+                          <span>Launch Live Demo</span>
+                        </a>
+                      ) : (
+                        <button
+                          id="modal-cta-live-disabled"
+                          disabled
+                          className="w-full bg-gray-200 text-gray-500 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-none cursor-not-allowed text-center"
+                        >
+                          <Globe size={18} />
+                          <span>Coming Soon</span>
+                        </button>
+                      )}
+
+                      <div className="mt-3">
+                        {selectedProject.githubUrl ? (
+                          <a
+                            id="modal-cta-github"
+                            href={selectedProject.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-gray-900 hover:bg-brand hover:text-gray-900 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer text-center block"
+                          >
+                            <Github size={18} />
+                            <span>GitHub</span>
+                          </a>
+                        ) : (
+                          <button
+                            id="modal-cta-github-disabled"
+                            disabled
+                            className="w-full bg-gray-200 text-gray-500 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-none cursor-not-allowed text-center"
+                          >
+                            <Github size={18} />
+                            <span>Coming Soon</span>
+                          </button>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
