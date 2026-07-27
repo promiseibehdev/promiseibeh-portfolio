@@ -192,7 +192,7 @@ export const PROJECTS: Project[] = [
     client: 'Internal R&D',
     date: 'Feb 2025',
     url: '',
-    liveUrl: '',
+    liveUrl: 'https://localized-ai-inference-sandbox-9tuo2hnt7zxppetjdsxzmn.streamlit.app/',
     githubUrl: 'https://github.com',
     technologies: ['Ollama', 'LM Studio', 'Local LLMs', 'System Administration', 'Workflow Integration'],
   },
