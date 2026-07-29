@@ -172,7 +172,7 @@ export const SERVICES: Service[] = [
 export const PROJECTS: Project[] = [
   {
     id: 'p1',
-    title: 'Automated Data Systems — School_Check.py',
+    title: 'School Check Automation System',
     category: 'automation',
     description: 'A custom Python automation script developed to retrieve and organize educational records from academic databases. Streamlined manual data search processes, formatted data cleanly, and automated weekly verification reports.',
     image: '/images/projects/school-check.webp.png',
@@ -193,7 +193,7 @@ export const PROJECTS: Project[] = [
     date: 'Feb 2025',
     url: '',
     liveUrl: 'https://localized-ai-inference-sandbox-9tuo2hnt7zxppetjdsxzmn.streamlit.app/',
-    githubUrl: 'https://github.com',
+    githubUrl: 'https://github.com/promiseibehdev/localized-ai-inference-sandbox',
     technologies: ['Ollama', 'LM Studio', 'Local LLMs', 'System Administration', 'Workflow Integration'],
   },
   {
@@ -222,9 +222,11 @@ export const PROJECTS: Project[] = [
     image: '/images/projects/woocommerce.webp.png',
     client: 'iTECH International Ltd',
     date: 'Dec 2024',
-    url: 'https://wordpress.org',
+    url: '',
     liveUrl: '',
     githubUrl: '',
+    liveStatus: 'not-public',
+    sourceStatus: 'not-public',
     technologies: ['WordPress', 'WooCommerce', 'Nginx Configuration', 'Database Optimization', 'Payment Gateways'],
   },
   {
@@ -235,9 +237,11 @@ export const PROJECTS: Project[] = [
     image: '/images/projects/promiseagrictech.webp.png',
     client: 'PromiseAgricTech',
     date: 'March 2026',
-    url: 'https://github.com/Promiseibeh5566?tab=projects',
+    url: '',
     liveUrl: '',
-    githubUrl: 'https://github.com/Promiseibeh5566?tab=projects',
+    githubUrl: '',
+    liveStatus: 'in-development',
+    sourceStatus: 'not-public',
     technologies: ['React', 'Firebase Firestore', 'State Management', 'Tailwind CSS', 'Admin Portal'],
   },
   {
@@ -261,9 +265,11 @@ export const PROJECTS: Project[] = [
     image: '/images/projects/corporate-portal.webp.png',
     client: 'iTECH International Ltd',
     date: 'May 2024',
-    url: 'https://wordpress.org',
+    url: '',
     liveUrl: '',
     githubUrl: '',
+    liveStatus: 'not-public',
+    sourceStatus: 'not-public',
     technologies: ['WordPress', 'PHP', 'CSS3', 'Web Security', 'Database Tuning'],
   },
   {
@@ -274,9 +280,11 @@ export const PROJECTS: Project[] = [
     image: '/images/projects/portfolio-platform.webp.png',
     client: 'Personal Brand Showcase',
     date: 'July 2026',
-    url: 'https://github.com/Promiseibeh5566',
+    url: 'https://github.com/promiseibehdev/promiseibeh-portfolio',
     liveUrl: '',
-    githubUrl: 'https://github.com/Promiseibeh5566',
+    githubUrl: 'https://github.com/promiseibehdev/promiseibeh-portfolio',
+    liveStatus: 'hidden',
+    sourceLabel: 'Portfolio Source',
     technologies: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'motion', 'Responsive Design'],
   }
 ];

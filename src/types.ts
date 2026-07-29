@@ -9,6 +9,9 @@ export interface Project {
   url: string;
   liveUrl?: string;
   githubUrl?: string;
+  liveStatus?: 'in-development' | 'not-public' | 'hidden';
+  sourceStatus?: 'not-public';
+  sourceLabel?: string;
   technologies: string[];
   projectType?: string;
   brand?: string;

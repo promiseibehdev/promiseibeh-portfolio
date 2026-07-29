@@ -276,7 +276,7 @@ export default function Portfolio() {
                       )}
                     </div>
 
-                    {/* CTA links: Live Demo + GitHub (dynamic) */}
+                    {/* Project-specific public links and unavailable states */}
                     <div className="w-full">
                       {project?.liveUrl ? (
                         <a
@@ -289,18 +289,22 @@ export default function Portfolio() {
                           <Globe size={18} />
                           <span>Launch Live Demo</span>
                         </a>
-                      ) : (
+                      ) : project?.liveStatus !== 'hidden' && (
                         <button
                           id="modal-cta-live-disabled"
                           disabled
                           className="w-full bg-gray-200 text-gray-500 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-none cursor-not-allowed text-center"
                         >
                           <Globe size={18} />
-                          <span>Coming Soon</span>
+                          <span>
+                            {project?.liveStatus === 'in-development'
+                              ? 'Live Demo: In Development'
+                              : 'Live Demo Not Public'}
+                          </span>
                         </button>
                       )}
 
-                      <div className="mt-3">
+                      <div className={project?.liveStatus === 'hidden' ? '' : 'mt-3'}>
                         {project?.githubUrl ? (
                           <a
                             id="modal-cta-github"
@@ -310,7 +314,7 @@ export default function Portfolio() {
                             className="w-full bg-gray-900 hover:bg-brand hover:text-gray-900 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer text-center block"
                           >
                             <Github size={18} />
-                            <span>GitHub</span>
+                            <span>{project.sourceLabel ?? 'GitHub'}</span>
                           </a>
                         ) : (
                           <button
@@ -319,7 +323,12 @@ export default function Portfolio() {
                             className="w-full bg-gray-200 text-gray-500 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-none cursor-not-allowed text-center"
                           >
                             <Github size={18} />
-                            <span>Coming Soon</span>
+                            <span>
+                              {project?.sourceStatus === 'not-public' &&
+                              project.liveStatus === 'in-development'
+                                ? 'Source: Not Public Yet'
+                                : 'Source Not Public'}
+                            </span>
                           </button>
                         )}
                       </div>
