@@ -10,6 +10,11 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   technologies: string[];
+  projectType?: string;
+  brand?: string;
+  version?: string;
+  domain?: string;
+  status?: string;
 }
 
 export interface Service {

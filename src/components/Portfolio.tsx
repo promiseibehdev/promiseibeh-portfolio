@@ -213,13 +213,15 @@ export default function Portfolio() {
                         </div>
                         <div className="text-xs">
                           <p className="text-gray-400 font-medium">
-                            {selectedProject.id === 'p6' || selectedProject.id === 'p7'
+                            {selectedProject.brand
+                              ? 'Brand'
+                              : selectedProject.id === 'p6' || selectedProject.id === 'p7'
                               ? 'Employer'
-                              : selectedProject.id === 'p3' || selectedProject.id === 'p5'
+                              : selectedProject.id === 'p5'
                               ? 'Founder Initiative'
                               : 'Client / Target Entity'}
                           </p>
-                          <p className="text-gray-800 font-bold">{selectedProject.client}</p>
+                          <p className="text-gray-800 font-bold">{selectedProject.brand ?? selectedProject.client}</p>
                         </div>
                       </div>
 
@@ -229,11 +231,13 @@ export default function Portfolio() {
                         </div>
                         <div className="text-xs">
                           <p className="text-gray-400 font-medium">
-                            {selectedProject.date.toLowerCase().includes('ongoing')
+                            {selectedProject.version
+                              ? 'Version'
+                              : selectedProject.date.toLowerCase().includes('ongoing')
                               ? 'Timeline'
                               : 'Date Finished'}
                           </p>
-                          <p className="text-gray-800 font-bold">{selectedProject.date}</p>
+                          <p className="text-gray-800 font-bold">{selectedProject.version ?? selectedProject.date}</p>
                         </div>
                       </div>
 
@@ -243,9 +247,33 @@ export default function Portfolio() {
                         </div>
                         <div className="text-xs">
                           <p className="text-gray-400 font-medium">Domain</p>
-                          <p className="text-gray-800 font-bold uppercase">{selectedProject.category === 'web' ? 'Web App' : selectedProject.category === 'automation' ? 'Automated System' : 'Branding'}</p>
+                          <p className="text-gray-800 font-bold uppercase">{selectedProject.domain ?? (selectedProject.category === 'web' ? 'Web App' : selectedProject.category === 'automation' ? 'Automated System' : 'Branding')}</p>
                         </div>
                       </div>
+
+                      {selectedProject.projectType && (
+                        <div className="flex items-center space-x-3">
+                          <div className="p-2 bg-brand/10 text-brand-dark rounded-lg">
+                            <Layers size={16} />
+                          </div>
+                          <div className="text-xs">
+                            <p className="text-gray-400 font-medium">Project Type</p>
+                            <p className="text-gray-800 font-bold">{selectedProject.projectType}</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {selectedProject.status && (
+                        <div className="flex items-center space-x-3">
+                          <div className="p-2 bg-brand/10 text-brand-dark rounded-lg">
+                            <Calendar size={16} />
+                          </div>
+                          <div className="text-xs">
+                            <p className="text-gray-400 font-medium">Status</p>
+                            <p className="text-gray-800 font-bold">{selectedProject.status}</p>
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* CTA links: Live Demo + GitHub (dynamic) */}
