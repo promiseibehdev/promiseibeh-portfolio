@@ -162,7 +162,7 @@ export default function Hero() {
                   href={social.url}
                   target="_blank"
                   referrerPolicy="no-referrer"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-brand hover:bg-brand/10 transition-all duration-300"
                 >
                   {social.icon}

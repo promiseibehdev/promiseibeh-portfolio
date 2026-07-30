@@ -15,10 +15,10 @@ export const PERSONAL_INFO = {
   freelance: 'Available',
   resumeUrl: '#',
   socials: {
-    github: 'https://github.com/Promiseibeh5566?tab=projects',
+    github: 'https://github.com/promiseibehdev',
     linkedin: 'https://www.linkedin.com/in/promise-ibeh-msc-01591b209/?skipRedirect=true',
     twitter: 'https://twitter.com',
-    instagram: 'https://ig.me/m/thinkai.motivation',
+    instagram: 'https://www.instagram.com/thinkai.motivation/',
     dribbble: 'https://dribbble.com',
   }
 };
