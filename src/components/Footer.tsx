@@ -41,7 +41,7 @@ export default function Footer() {
                 id={social.id}
                 href={social.url}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 referrerPolicy="no-referrer"
                 className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand hover:bg-brand/15 transition-all duration-300"
                 aria-label="Social Link"
