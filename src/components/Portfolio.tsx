@@ -76,7 +76,7 @@ export default function Portfolio() {
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
-              <motion.div
+              <motion.article
                 key={project.id}
                 id={`project-card-${project.id}`}
                 layout
@@ -115,7 +115,7 @@ export default function Portfolio() {
                     </h3>
                   </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </AnimatePresence>
         </motion.div>

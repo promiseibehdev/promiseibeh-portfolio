@@ -46,30 +46,31 @@ export default function App() {
       {/* Navigation Header */}
       <Header activeSection={activeSection} />
 
-      {/* Hero Banner Section */}
-      <Hero />
+      <main id="main-content">
+        {/* Hero Banner Section */}
+        <Hero />
 
-      {/* About & Skill Section */}
-      <About />
+        {/* About & Skill Section */}
+        <About />
 
-      {/* Services Grid Section */}
-      <Services />
+        {/* Services Grid Section */}
+        <Services />
 
-      {/* Portfolio Projects Section */}
-      <Portfolio />
+        {/* Portfolio Projects Section */}
+        <Portfolio />
 
-      {/* Deep Insights Blog Journal Section */}
-      <Blog />
+        {/* Deep Insights Blog Journal Section */}
+        <Blog />
 
-      {/* Testimonials Quote Section */}
-      <Testimonials />
+        {/* Testimonials Quote Section */}
+        <Testimonials />
 
-      {/* Contact Form Section */}
-      <Contact />
+        {/* Contact Form Section */}
+        <Contact />
+      </main>
 
       {/* Global Brand Footer */}
       <Footer />
     </div>
   );
 }
-

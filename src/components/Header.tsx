@@ -51,21 +51,23 @@ export default function Header({ activeSection }: HeaderProps) {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <button
+          <a
             id="logo-btn"
+            href="#home"
             onClick={() => scrollToSection('home')}
             className="flex items-center space-x-1 font-display text-2xl font-bold tracking-tight text-gray-900 group cursor-pointer focus:outline-hidden"
           >
             <span>Promise</span>
             <span className="w-2 h-2 rounded-full bg-brand transition-transform duration-300 group-hover:scale-130 inline-block"></span>
-          </button>
+          </a>
 
           {/* Desktop Navigation */}
           <nav id="desktop-nav" className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
                 id={`nav-link-${item.id}`}
+                href={`#${item.id}`}
                 onClick={() => scrollToSection(item.id)}
                 className={`relative py-2 text-sm font-medium transition-colors cursor-pointer focus:outline-hidden ${
                   activeSection === item.id
@@ -81,7 +83,7 @@ export default function Header({ activeSection }: HeaderProps) {
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
-              </button>
+              </a>
             ))}
 
             {/* Custom CTA Button */}
@@ -131,14 +133,15 @@ export default function Header({ activeSection }: HeaderProps) {
             >
               <div>
                 <div className="flex items-center justify-between mb-12">
-                  <button
+                  <a
                     id="mobile-logo-btn"
+                    href="#home"
                     onClick={() => scrollToSection('home')}
                     className="flex items-center space-x-1 font-display text-2xl font-bold tracking-tight text-gray-900 cursor-pointer"
                   >
                     <span>Promise</span>
                     <span className="w-2 h-2 rounded-full bg-brand"></span>
-                  </button>
+                  </a>
                   <button
                     id="mobile-menu-close"
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -150,9 +153,10 @@ export default function Header({ activeSection }: HeaderProps) {
 
                 <div className="flex flex-col space-y-5">
                   {navItems.map((item) => (
-                    <button
+                    <a
                       key={item.id}
                       id={`mobile-nav-link-${item.id}`}
+                      href={`#${item.id}`}
                       onClick={() => scrollToSection(item.id)}
                       className={`text-left text-lg font-medium py-2 transition-colors cursor-pointer border-b border-gray-50 ${
                         activeSection === item.id
@@ -161,7 +165,7 @@ export default function Header({ activeSection }: HeaderProps) {
                       }`}
                     >
                       {item.label}
-                    </button>
+                    </a>
                   ))}
                 </div>
               </div>

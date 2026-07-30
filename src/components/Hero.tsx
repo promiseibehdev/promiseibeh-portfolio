@@ -190,7 +190,7 @@ export default function Hero() {
             <div className="absolute inset-2 bg-gray-100 rounded-full overflow-hidden border-4 border-white shadow-2xl relative">
               <img
                 src={PERSONAL_INFO.avatar}
-                alt={PERSONAL_INFO.name}
+                alt={`Portrait of ${PERSONAL_INFO.name}`}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
