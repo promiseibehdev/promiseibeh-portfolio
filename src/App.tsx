@@ -8,6 +8,7 @@ import Blog from './components/Blog';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import {isSeoPath, SeoRoute} from './components/SeoPages';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -40,6 +41,10 @@ export default function App() {
       });
     };
   }, []);
+
+  if (isSeoPath(window.location.pathname)) {
+    return <SeoRoute />;
+  }
 
   return (
     <div className="font-sans text-gray-800 bg-white min-h-screen selection:bg-brand selection:text-gray-900 scroll-smooth antialiased">

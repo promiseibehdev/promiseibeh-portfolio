@@ -186,9 +186,9 @@ export default function Contact() {
                     {card.icon}
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                    <p className="text-xs font-bold uppercase tracking-wider text-gray-400">
                       {card.title}
-                    </h4>
+                    </p>
                     <p className="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors mt-0.5">
                       {card.value}
                     </p>

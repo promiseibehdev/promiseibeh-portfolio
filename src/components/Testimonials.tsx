@@ -97,9 +97,9 @@ export default function Testimonials() {
 
                 {/* Name & Credentials */}
                 <div>
-                  <h4 className="font-display font-bold text-gray-800 text-lg">
+                  <h3 className="font-display font-bold text-gray-800 text-lg">
                     {activeTestimonial.name}
-                  </h4>
+                  </h3>
                   <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
                     {activeTestimonial.role} &mdash; <span className="text-brand-dark">{activeTestimonial.company}</span>
                   </p>

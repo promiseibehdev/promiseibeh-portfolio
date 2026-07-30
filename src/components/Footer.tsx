@@ -1,5 +1,6 @@
 import { Github, Linkedin, Instagram, ArrowUp } from 'lucide-react';
 import { PERSONAL_INFO } from '../data';
+import {EXPERTISE_LINKS} from '../seoContent';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -51,6 +52,25 @@ export default function Footer() {
             ))}
           </div>
         </div>
+
+        <nav aria-label="Explore expertise" className="border-b border-gray-800 pb-10 mb-10">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
+            Explore my expertise
+          </p>
+          <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            <a className="text-gray-400 hover:text-white" href="/projects">Projects</a>
+            <a className="text-gray-400 hover:text-white" href="/blog">Blog</a>
+            {EXPERTISE_LINKS.map((link) => (
+              <a
+                key={link.path}
+                className="text-gray-400 hover:text-white"
+                href={link.path}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </nav>
 
         {/* Copyrights and Back to top link */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-gray-500">
