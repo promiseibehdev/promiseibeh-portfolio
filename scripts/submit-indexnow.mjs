@@ -1,4 +1,5 @@
 import {readFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
 
 const SITE_URL = 'https://promiseibeh-portfolio.pages.dev';
 const HOST = 'promiseibeh-portfolio.pages.dev';
@@ -29,6 +30,24 @@ const urlList = [...new Set([`${SITE_URL}/`, ...sitemapUrls])];
 
 if (!urlList.length || urlList.some((url) => new URL(url).host !== HOST)) {
   throw new Error('The sitemap contains an invalid or unexpected host.');
+}
+
+try {
+  const previousSitemap = execFileSync('git', ['show', 'HEAD^:public/sitemap.xml'], {
+    encoding: 'utf8',
+  });
+  const previousUrls = [
+    ...new Set([
+      `${SITE_URL}/`,
+      ...[...previousSitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]),
+    ]),
+  ];
+  if (JSON.stringify([...urlList].sort()) === JSON.stringify(previousUrls.sort())) {
+    console.log('IndexNow skipped: the sitemap URL set is unchanged.');
+    process.exit(0);
+  }
+} catch {
+  console.log('No previous sitemap was available; continuing with IndexNow submission.');
 }
 
 await verifyKeyFile();
