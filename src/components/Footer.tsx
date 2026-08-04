@@ -58,6 +58,7 @@ export default function Footer() {
             Explore my expertise
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            <a className="text-gray-400 hover:text-white" href="/services">Services</a>
             <a className="text-gray-400 hover:text-white" href="/projects">Projects</a>
             <a className="text-gray-400 hover:text-white" href="/blog">Blog</a>
             {EXPERTISE_LINKS.map((link) => (
@@ -71,6 +72,20 @@ export default function Footer() {
             ))}
           </div>
         </nav>
+
+        <div className="border-b border-gray-800 pb-10 mb-10 flex flex-wrap items-center gap-4">
+          <a className="rounded-lg bg-brand px-5 py-2.5 text-sm font-bold text-gray-900" href="/services">
+            View Services
+          </a>
+          <a
+            className="rounded-lg border border-gray-700 px-5 py-2.5 text-sm font-bold text-white hover:border-brand"
+            href="https://selar.com/0778q5572c"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book a Consultation
+          </a>
+        </div>
 
         {/* Copyrights and Back to top link */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-gray-500">

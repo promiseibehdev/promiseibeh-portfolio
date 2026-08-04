@@ -8,6 +8,7 @@ import {
   findExpertisePage,
 } from '../seoContent';
 import type {BlogPost, Project} from '../types';
+import {CLIENT_SERVICES, SELAR_STOREFRONT_URL} from '../serviceData';
 
 const SITE_URL = 'https://promiseibeh-portfolio.pages.dev';
 const DEFAULT_IMAGE = `${SITE_URL}/images/projects/portfolio-platform.webp.png`;
@@ -116,14 +117,17 @@ function ContentHeader() {
           <span>Promise</span>
           <span className="w-2 h-2 rounded-full bg-brand inline-block" />
         </a>
-        <nav aria-label="Content navigation" className="flex items-center gap-4 sm:gap-7 text-sm">
+        <nav aria-label="Content navigation" className="flex items-center gap-4 sm:gap-7 text-sm whitespace-nowrap">
+          <a className="text-gray-600 hover:text-gray-900" href="/services">
+            Services
+          </a>
           <a className="text-gray-600 hover:text-gray-900" href="/projects">
             Projects
           </a>
-          <a className="text-gray-600 hover:text-gray-900" href="/blog">
+          <a className="hidden sm:inline text-gray-600 hover:text-gray-900" href="/blog">
             Blog
           </a>
-          <a className="text-gray-600 hover:text-gray-900" href="/#contact">
+          <a className="hidden sm:inline text-gray-600 hover:text-gray-900" href="/#contact">
             Contact
           </a>
         </nav>
@@ -279,7 +283,136 @@ function ContactCallout() {
       >
         Go to contact details
       </a>
+      <a
+        href="/services"
+        className="inline-flex mt-4 sm:mt-7 sm:ml-3 border border-gray-600 text-white font-bold px-6 py-3 rounded-xl"
+      >
+        View services
+      </a>
     </section>
+  );
+}
+
+export function ClientServicesPage() {
+  const path = '/services';
+  const canonical = `${SITE_URL}${path}`;
+  const title = 'Technology Services & Consulting | Promise Ibeh';
+  const description =
+    'Book professional website development, WordPress, Python automation, cloud, cybersecurity, AI automation, and technology consulting services with Promise Ibeh.';
+  usePageMetadata({
+    title,
+    description,
+    path,
+    structuredData: [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${canonical}#webpage`,
+        url: canonical,
+        name: title,
+        description,
+        mainEntity: {
+          '@type': 'OfferCatalog',
+          name: 'Promise Ibeh Technology Services',
+          itemListElement: CLIENT_SERVICES.map((service) => ({
+            '@type': 'Offer',
+            url: service.url,
+            priceCurrency: 'NGN',
+            itemOffered: {
+              '@type': 'Service',
+              name: service.title,
+              description: service.description,
+              provider: {'@id': `${SITE_URL}/#person`},
+            },
+          })),
+        },
+        breadcrumb: {'@id': `${canonical}#breadcrumb`},
+      },
+      breadcrumbs('Services', path),
+    ],
+  });
+
+  return (
+    <ContentShell current="Services" path={path}>
+      <section className="max-w-6xl mx-auto px-6 md:px-12 py-14">
+        <header className="max-w-4xl">
+          <p className="font-mono text-xs font-bold uppercase tracking-widest text-brand-dark">
+            Professional technology services
+          </p>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 mt-3 leading-tight">
+            Practical technology services for your next project
+          </h1>
+          <p className="text-lg text-gray-600 leading-relaxed mt-6">
+            Choose the service that matches your goal, review the full scope on Selar, and complete
+            your booking or payment there. If you are unsure where to begin, start with a private
+            consultation.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="https://selar.com/0778q5572c"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-6 py-3 font-bold text-white hover:bg-brand hover:text-gray-900"
+            >
+              Book a Consultation <ExternalLink size={16} />
+            </a>
+            <a
+              href={SELAR_STOREFRONT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-gray-300 px-6 py-3 font-bold text-gray-900 hover:border-brand"
+            >
+              Visit Selar Store <ExternalLink size={16} />
+            </a>
+          </div>
+        </header>
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-7 mt-14">
+          {CLIENT_SERVICES.map((service) => (
+            <article
+              key={service.url}
+              className="flex flex-col rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg"
+            >
+              <p className="text-sm font-bold text-brand-dark">{service.price}</p>
+              <h2 className="font-display text-2xl font-bold text-gray-900 mt-2">{service.title}</h2>
+              <p className="text-gray-600 leading-relaxed mt-4">{service.description}</p>
+              <h3 className="font-bold text-gray-900 mt-6">What you receive</h3>
+              <ul className="mt-3 space-y-2 text-sm text-gray-600 list-disc pl-5">
+                {service.deliverables.map((deliverable) => (
+                  <li key={deliverable}>{deliverable}</li>
+                ))}
+              </ul>
+              <a
+                href={service.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${service.title} on Selar`}
+                className="mt-auto pt-7 inline-flex items-center gap-2 font-bold text-gray-900 hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-dark"
+              >
+                View Service <ExternalLink size={16} />
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <aside className="mt-12 rounded-2xl border border-brand/30 bg-brand/10 p-6 text-gray-800">
+          <p className="font-semibold">
+            Payments and bookings are securely completed through Selar.
+          </p>
+        </aside>
+
+        <section className="mt-14 rounded-3xl bg-gray-900 p-8 sm:p-12 text-white">
+          <p className="text-brand font-bold uppercase tracking-widest text-xs">Need help choosing?</p>
+          <h2 className="font-display text-3xl font-bold mt-3">Tell me what you want to build</h2>
+          <p className="mt-4 max-w-2xl text-gray-300 leading-relaxed">
+            Share your business goal or technical challenge, and I will help you identify the most
+            suitable service and next step.
+          </p>
+          <a href="/#contact" className="inline-flex mt-7 rounded-xl bg-brand px-6 py-3 font-bold text-gray-900">
+            Hire Me
+          </a>
+        </section>
+      </section>
+    </ContentShell>
   );
 }
 
@@ -395,6 +528,12 @@ export function ProjectsPage() {
             entry explains what was built and whether it is a deployed application, simulator, or
             work in progress.
           </p>
+          <a
+            href="/services"
+            className="inline-flex items-center gap-2 mt-7 rounded-xl bg-gray-900 px-6 py-3 font-bold text-white hover:bg-brand hover:text-gray-900"
+          >
+            View Services <ArrowRight size={16} />
+          </a>
         </header>
         <div className="grid md:grid-cols-2 gap-8 mt-14">
           {PROJECTS.map((project) => (
@@ -590,6 +729,7 @@ export function SeoRoute() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
   const expertisePage = findExpertisePage(path);
   if (expertisePage) return <ExpertisePage page={expertisePage} />;
+  if (path === '/services') return <ClientServicesPage />;
   if (path === '/projects') return <ProjectsPage />;
   if (path === '/blog') return <BlogIndexPage />;
   if (path.startsWith('/blog/')) {
@@ -604,6 +744,7 @@ export const isSeoPath = (path: string) => {
   const normalized = path.replace(/\/+$/, '') || '/';
   return Boolean(
     findExpertisePage(normalized) ||
+      normalized === '/services' ||
       normalized === '/projects' ||
       normalized === '/blog' ||
       (normalized.startsWith('/blog/') &&

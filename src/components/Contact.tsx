@@ -168,6 +168,22 @@ export default function Contact() {
               <p className="text-gray-500 font-light text-sm sm:text-base leading-relaxed">
                 Whether you need a brand-new application built from scratch, refined design system advice, or an experienced engineer to join your technical team—I am always open to exploring exciting projects.
               </p>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://selar.com/0778q5572c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl bg-gray-900 px-5 py-3 text-sm font-bold text-white hover:bg-brand hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-dark"
+                >
+                  Book a Consultation
+                </a>
+                <a
+                  href="/services"
+                  className="rounded-xl border border-gray-300 px-5 py-3 text-sm font-bold text-gray-800 hover:border-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-dark"
+                >
+                  View Services
+                </a>
+              </div>
             </div>
 
             {/* Cards Grid */}

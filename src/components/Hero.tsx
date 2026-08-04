@@ -141,6 +141,13 @@ export default function Hero() {
               >
                 Hire Me
               </button>
+              <a
+                id="hero-services-btn"
+                href="/services"
+                className="bg-brand hover:bg-brand-dark text-gray-900 text-sm sm:text-base font-semibold px-5 py-2.5 sm:px-8 sm:py-4 rounded-xl shadow-lg transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-dark"
+              >
+                View Services
+              </a>
               <button
                 id="hero-cv-btn"
                 onClick={() => setIsCVModalOpen(true)}
